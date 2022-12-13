@@ -1,0 +1,19 @@
+round = int(input())
+
+discount_list = []
+
+for i in range(round):
+    data = [int(i) for i in input().split()]
+    data = sorted(data[1:],reverse=True)
+
+    data = [data[x:x+4] for x in range(0, len(data), 4)]
+
+    discount = 0
+    for index,item in enumerate(data):
+        if len(item) != 4:
+            break
+        discount += min(item)
+    discount_list.append(discount)
+
+for i in discount_list:
+    print(i)
